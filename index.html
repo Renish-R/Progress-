@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Backend Progress Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("Image.jpg");
+      background-size: cover;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: scale(1.01);
+      transform-origin: top center;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: #0a0427;
+      font-size: 22px;
+    }
+
+    .table-container {
+      max-height: 80vh;
+      overflow-y: auto;
+      width: 100%;
+      max-width: 1000px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 6px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #34495e;
+      color: #fff;
+      font-size: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .level-block {
+      background-color: #dff0fa;
+      font-weight: bold;
+      color: #2c3e50;
+      text-align: left;
+      padding-left: 10px;
+      border-left: 6px solid #3498db;
+    }
+
+    td.complete {
+      color: green;
+      font-weight: bold;
+    }
+
+    td.progress {
+      color: orange;
+      font-weight: bold;
+      background-color: #fff3cd; /* light yellow */
+    }
+
+    td.empty {
+      color: #bbb;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      width: 120px;
+    }
+
+    @media screen and (max-width: 600px) {
+      table {
+        font-size: 12px;
+      }
+      th, td {
+        padding: 6px 4px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Java Backend Development Progress Tracker</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Level ↓</th>
+          <th>Renish</th>
+          <th>Nijo</th>
+          <th>Praveenath</th>
+          <th>Sooraj</th>
+          <th>Belgin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="level-block">13 – Interview Prep</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">12 – Authentication</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">11 – Architecture</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">10 – Design</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">9 – DSA Basics</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">8 – Project</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">7 – Debugging</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">6 – Spring Boot</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">5 – Git & GitHub</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">4 – Database</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">3 – API</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">2 – Problem Solving</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">1 – Java Basics</td><td class="progress">⏳</td><td class="progress">⏳</td><td class="progress">⏳</td><td class="progress">⏳</td><td class="empty"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
