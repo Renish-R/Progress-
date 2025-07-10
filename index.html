@@ -74,9 +74,34 @@
     }
 
     td.progress {
+      position: relative;
       color: black;
       font-weight: bold;
-      background-color: #fff3cd; /* light yellow */
+      background-color: #fff3cd;
+      cursor: default;
+    }
+
+    td.progress .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 4px 8px;
+      border-radius: 4px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 12px;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    td.progress:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
     }
 
     td.empty {
@@ -113,7 +138,7 @@
     <table>
       <thead>
         <tr>
-          <th>Level ↑</th>
+          <th>Level ⬆️</th>
           <th>Reno</th>
           <th>Nijo</th>
           <th>Praveenath</th>
@@ -134,7 +159,14 @@
         <tr><td class="level-block">04 – Database</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
         <tr><td class="level-block">03 – API</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
         <tr><td class="level-block">02 – Problem Solving</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
-        <tr><td class="level-block">01 – Java Basics</td><td class="progress">92%⏳</td><td class="progress">18%⏳</td><td class="progress">18%⏳</td><td class="progress">11%⏳</td><td class="empty"></td></tr>
+        <tr>
+          <td class="level-block">01 – Java Basics</td>
+          <td class="progress">92%⏳<span class="tooltip">Started on: 23 June 2025</span></td>
+          <td class="progress">18%⏳<span class="tooltip">Started on: 08 July 2025</span></td>
+          <td class="progress">18%⏳<span class="tooltip">Started on: 06 July 2025</span></td>
+          <td class="progress">11%⏳<span class="tooltip">Started on: 08 July 2025</span></td>
+          <td class="empty"></td>
+        </tr>
       </tbody>
     </table>
   </div>
