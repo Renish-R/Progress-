@@ -171,25 +171,22 @@
     </table>
   </div>
 
-  <!-- 🔊 Hidden audio (autoplay with fallback) -->
-  <audio id="intro-audio" src="audio.mp3" preload="auto"></audio>
+  <!-- 🔊 Background audio -->
+  <audio id="intro-audio" src="audio.mp3" autoplay muted preload="auto"></audio>
+
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('intro-audio');
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("intro-audio");
       audio.volume = 1.0;
-      audio.play().catch(err => {
-        console.warn("Autoplay blocked. Waiting for user interaction...");
-        const resumeAudio = () => {
-          audio.play();
-          document.removeEventListener("click", resumeAudio);
-        };
-        document.addEventListener("click", resumeAudio);
-      });
+      setTimeout(() => {
+        audio.muted = false;
+      }, 500); // unmute after 0.5s
     });
   </script>
 
 </body>
 </html>
+
 
 
 
