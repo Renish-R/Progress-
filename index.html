@@ -171,5 +171,235 @@
     </table>
   </div>
 
+  <!-- 🔊 Hidden audio (autoplay with fallback) -->
+  <audio id="intro-audio" src="audio.mp3" preload="auto"></audio>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('intro-audio');
+      audio.volume = 1.0;
+      audio.play().catch(err => {
+        console.warn("Autoplay blocked. Waiting for user interaction...");
+        const resumeAudio = () => {
+          audio.play();
+          document.removeEventListener("click", resumeAudio);
+        };
+        document.addEventListener("click", resumeAudio);
+      });
+    });
+  </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developers</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("Image.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: scale(1);
+      transform-origin: top center;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: #ffffff;
+      font-size: 22px;
+    }
+
+    .table-container {
+      max-height: 80vh;
+      overflow-y: auto;
+      width: 100%;
+      max-width: 1000px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 6px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #34495e;
+      color: #fff;
+      font-size: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .level-block {
+      background-color: #dff0fa;
+      font-weight: bold;
+      color: #2c3e50;
+      text-align: left;
+      padding-left: 10px;
+      border-left: 6px solid #3498db;
+    }
+
+    td.complete {
+      color: green;
+      font-weight: bold;
+    }
+
+    td.progress {
+      position: relative;
+      color: black;
+      font-weight: bold;
+      background-color: #fff3cd;
+      cursor: default;
+    }
+
+    td.progress .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 4px 8px;
+      border-radius: 4px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 12px;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    td.progress:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    td.empty {
+      color: #bbb;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      width: 120px;
+    }
+
+    @media screen and (max-width: 600px) {
+      table {
+        font-size: 12px;
+      }
+      th, td {
+        padding: 6px 4px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Java Backend Development Progress Tracker</h2>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Level ⬆️</th>
+          <th>Reno</th>
+          <th>Nijo</th>
+          <th>Praveenath</th>
+          <th>Sooraj</th>
+          <th>Belgin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="level-block">13 – Interview Preparation</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">12 – Authentication</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">11 – Architecture</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">10 – Design</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">09 – DSA Basics</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">08 – Project</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">07 – Debugging</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">06 – Spring Boot</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">05 – Git & GitHub</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">04 – Database</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">03 – API</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr><td class="level-block">02 – Problem Solving</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+        <tr>
+          <td class="level-block">01 – Java Basics</td>
+          <td class="progress">97%⏳<span class="tooltip">Started on: 23 June 2025</span></td>
+          <td class="progress">18%⏳<span class="tooltip">Started on: 08 July 2025</span></td>
+          <td class="progress">18%⏳<span class="tooltip">Started on: 06 July 2025</span></td>
+          <td class="progress">11%⏳<span class="tooltip">Started on: 08 July 2025</span></td>
+          <td class="empty"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
+ -->
