@@ -17,8 +17,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      transform: scale(1);
-      transform-origin: top center;
     }
 
     h2 {
@@ -68,9 +66,8 @@
       border-left: 6px solid #3498db;
     }
 
-    td.complete {
-      color: green;
-      font-weight: bold;
+    td.empty {
+      color: #bbb;
     }
 
     td.progress {
@@ -81,7 +78,8 @@
       cursor: default;
     }
 
-    td.progress .tooltip {
+    td.progress .tooltip,
+    td.complete .tooltip {
       visibility: hidden;
       opacity: 0;
       background-color: #333;
@@ -99,45 +97,18 @@
       transition: opacity 0.2s ease-in-out;
     }
 
-    td.progress:hover .tooltip {
+    td.progress:hover .tooltip,
+    td.complete:hover .tooltip {
       visibility: visible;
       opacity: 1;
     }
 
     td.complete {
-    background-color:#b7dcf2;
-    color: #155724;
-    font-weight: bold;
-    position: relative;
-    cursor: default;
-    }
-
-    td.complete .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 4px 8px;
-    border-radius: 4px;
-    position: absolute;
-    z-index: 10;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    font-size: 12px;
-    transition: opacity 0.2s ease-in-out;
-    }
-
-    td.complete:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    }
-
-
-    td.empty {
-      color: #bbb;
+      background-color:#b7dcf2;
+      color: #155724;
+      font-weight: bold;
+      position: relative;
+      cursor: default;
     }
 
     tr:nth-child(even) {
@@ -146,7 +117,7 @@
 
     th:not(:first-child),
     td:not(:first-child) {
-      width: 120px;
+      width: 110px;
     }
 
     @media screen and (max-width: 600px) {
@@ -192,16 +163,16 @@
         <tr><td class="level-block">03 – API</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
         <tr>
           <td class="level-block">02 – Problem Solving</td>
-          <td class="progress">9/12⏳<span class="tooltip">Started on: 12 July 2025</span></td>
+          <td class="progress">9/12⏳<span class="tooltip">Started: 12 Jul</span></td>
           <td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td>
         </tr>
         <tr>
           <td class="level-block">01 – Java Basics</td>
-          <td class="complete">✔️<span class="tooltip">23 June – 11 July 2025</span></td>
-          <td class="progress">61%⏳<span class="tooltip">Started on: 08 July 2025</span></td>
-          <td class="progress">61%⏳<span class="tooltip">Started on: 06 July 2025</span></td>
-          <td class="progress">25%⏳<span class="tooltip">Started on: 08 July 2025</span></td>
-          <td class="progress">38%⏳<span class="tooltip">Started on: 16 July 2025</span></td>
+          <td class="complete">✔️<span class="tooltip">23 Jun – 11 Jul</span></td>
+          <td class="progress">61%⏳<span class="tooltip">Started: 08 Jul</span></td>
+          <td class="progress">61%⏳<span class="tooltip">Started: 06 Jul</span></td>
+          <td class="progress">25%⏳<span class="tooltip">Started: 08 Jul</span></td>
+          <td class="progress">38%⏳<span class="tooltip">Started: 17 Jul</span></td>
         </tr>
       </tbody>
     </table>
